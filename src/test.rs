@@ -1,51 +1,27 @@
-extern crate gtk;
-
 use gtk::prelude::*;
-use gtk::{Label, Window, Button, Box, Image};
+use gtk::{Application, ApplicationWindow, Button};
 
 pub fn run() {
-    // Инициализируем GTK
-    gtk::init().expect("Failed to initialize GTK.");
+    let application = Application::builder()
+        .application_id("com.example.FirstGtkApp")
+        .build();
 
-    // Создаем главное окно
-    let window = Window::new(gtk::WindowType::Toplevel);
-    window.set_title("Hello, GTK!");
-    window.set_default_size(300, 100);
+    application.connect_activate(|app| {
+        let window: ApplicationWindow = ApplicationWindow::builder()
+            .application(app)
+            .title("First GTK Program")
+            .default_width(350)
+            .default_height(70)
+            .build();
 
-    // Создаем вертикальный контейнер для виджетов
-    let vbox = Box::new(gtk::Orientation::Vertical, 5);
+        let button = Button::with_label("Click me!");
+        button.connect_clicked(|_| {
+            eprintln!("Clicked!");
+        });
+        window.add(&button);
 
-    // Загружаем изображение
-    let image = Image::from_file("/lymera/src/pics.jpg"); // Замените на путь к вашему изображению
-
-    // Создаем метку
-    let label = Label::new(Some("Привет, GTK!")); // Текст метки
-
-    // Создаем кнопку
-    let button = Button::with_label("Выход");
-
-    // Обработчик для кнопки выхода
-    button.connect_clicked(|_| {
-        gtk::main_quit();
+        window.show_all();
     });
 
-    // Добавляем виджеты в контейнер
-    vbox.pack_start(&image, true, true, 0); // Добавляем изображение
-    vbox.pack_start(&label, true, true, 0);
-    vbox.pack_start(&button, true, true, 0);
-
-    // Добавляем контейнер в окно
-    window.add(&vbox);
-
-    // Обработчик для закрытия окна
-    window.connect_delete_event(|_, _| {
-        gtk::main_quit();
-        Inhibit(false)
-    });
-
-    // Показываем все виджеты
-    window.show_all();
-
-    // Запускаем главный цикл
-    gtk::main();
+    application.run();
 }
