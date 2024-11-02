@@ -1,0 +1,11 @@
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    border-radius: 8px; /* может не поддерживаться, можно попробовать */
+}
+
+button:hover {
+    background-color: #45a049;
+}

@@ -1,5 +1,5 @@
-mod test;
+mod testcss;
 
 fn main() {
-    test::run()
+    testcss::ru()
 }

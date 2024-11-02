@@ -6,4 +6,6 @@ edition = "2021"
 [dependencies]
 gtk = "0.18.1"
 gdk-pixbuf = "0.20.4"
-glib = "0.20.4"
+gdk = "0.18.0"
+glib = "0.20.5"
+
