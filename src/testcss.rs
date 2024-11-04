@@ -18,8 +18,7 @@ pub fn ru() {
         window.add(&notebook);
         window.set_title("Lymera");
         window.set_default_size(400, 300);
-        window.show_all();
-
+        
         // Загрузка CSS
         let css_provider = CssProvider::new();
         css_provider.load_from_path("src/styles.css").expect("Failed to load CSS");
@@ -28,6 +27,8 @@ pub fn ru() {
             &css_provider,
             gtk::STYLE_PROVIDER_PRIORITY_USER,
         );
+
+        window.show_all();
     });
 
     application.run();

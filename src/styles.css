@@ -1,11 +1,45 @@
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    margin: 4px 2px;
-    border-radius: 8px; /* может не поддерживаться, можно попробовать */
+/* Общие стили для всего приложения */
+* {
+    background-color: #f0f0f0; /* Светло-серый фон для всего приложения */
+    color: #333; /* Темный цвет текста */
+    font-family: Arial, sans-serif; /* Шрифт приложения */
 }
 
+/* Стили для окна */
+window {
+    background-color: #ffffff; /* Белый фон для окна */
+    border: 1px solid #ccc; /* Легкая граница окна */
+}
+
+/* Стили для вкладок (Notebook) */
+.notebook {
+    border: none; /* Убираем границу у вкладок */
+}
+
+/* Стили для страниц вкладок */
+.notebook > .page {
+    background-color: #ffffff; /* Белый фон для страниц вкладок */
+    padding: 10px; /* Отступы вокруг содержимого */
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #ffffff; /* Цвет текста кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругленные углы */
+    padding: 10px 15px; /* Отступы */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде указателя при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
+
+/* Эффект наведения для кнопок */
 button:hover {
-    background-color: #45a049;
+    background-color: #0056b3; /* Темнее при наведении */
+}
+
+/* Эффект нажатия для кнопок */
+button:active {
+    background-color: #004085; /* Темно-синий при нажатии */
 }

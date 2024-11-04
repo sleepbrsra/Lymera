@@ -3,9 +3,12 @@ name = "lymera"
 version = "0.1.0"
 edition = "2021"
 
-[dependencies]
-gtk = "0.18.1"
-gdk-pixbuf = "0.20.4"
-gdk = "0.18.0"
-glib = "0.20.5"
+# Это описание вашего проекта
+description = "A Discord-like application using Rust and GTK"
+license = "MIT"
 
+[dependencies]
+gtk = "0.18.1"       # Зависимость для GTK
+gio = "0.20.5"       # Зависимость для GIO (GTK Input/Output)
+gdk = "0.18.0"       # Зависимость для GDK
+glib = "0.20.5"      # Зависимость для GLib
